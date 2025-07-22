@@ -5,11 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بيت ديزاين - مطابخ وغرف نوم</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; }
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
     </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
     <script defer src="dark-mode-toggle.js"></script>
+    <style>
+        @keyframes slide-fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slide-fade-in {
+            animation: slide-fade-in 0.8s ease-out forwards;
+        }
+    </style>
 
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
@@ -19,53 +45,64 @@
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <h1 class="text-2xl font-bold text-teal-600 dark:text-teal-400">بيت ديزاين</h1>
         <nav class="hidden md:flex space-x-6 space-x-reverse">
-            <a href="#" class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">الرئيسية</a>
+            <a href="#"
+               class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">الرئيسية</a>
             <a href="#kitchens" class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">المطابخ</a>
-            <a href="#bedrooms" class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">غرف النوم</a>
+            <a href="#bedrooms" class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">غرف
+                النوم</a>
             <a href="#offers" class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">العروض</a>
-            <a href="#about" class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">من نحن</a>
-            <a href="#contact" class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">اتصل بنا</a>
+            <a href="#about" class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">من
+                نحن</a>
+            <a href="#contact" class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">اتصل
+                بنا</a>
         </nav>
         <div class="flex items-center gap-4">
-<!--            <button class="text-gray-600 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">🔍</button>-->
-<!--            <button class="text-gray-600 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">🛒</button>-->
+            <!--            <button class="text-gray-600 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">🔍</button>-->
+            <!--            <button class="text-gray-600 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400">🛒</button>-->
         </div>
     </div>
 </header>
 
 <!-- Hero Section -->
-<section class="bg-gray-100 dark:bg-gray-800 py-20">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl font-bold mb-4">صمم بيتك كما تحلم</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">مطابخ وغرف نوم مودرن وكلاسيك بأعلى جودة</p>
-        <div class="flex justify-center gap-4">
-            <a href="#kitchens" class="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700">تصفح المطابخ</a>
-            <a href="#bedrooms" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-6 py-3 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600">تصفح غرف النوم</a>
+<!-- Hero Section with Cover Image -->
+<section class="relative h-[80vh] bg-cover bg-center bg-no-repeat" style="background-image: url('/cover.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Overlay -->
+
+    <div class="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">صمم بيتك كما تحلم</h2>
+        <p class="text-lg md:text-xl mb-8 animate__animated animate__fadeInUp animate__delay-1s">
+            مطابخ وغرف نوم مودرن وكلاسيك بأعلى جودة
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 animate__animated animate__fadeInUp animate__delay-2s">
+            <a href="#kitchens" class="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition">تصفح المطابخ</a>
+            <a href="#bedrooms" class="bg-white text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-100 transition">تصفح غرف النوم</a>
         </div>
     </div>
 </section>
 
+
 <!-- Product Filters -->
 <!-- Product Filters -->
-<section class="container mx-auto px-4 py-8">
+<!-- Product Filters -->
+<section class="container mx-auto px-4 py-8 animate-slide-fade-in">
     <h3 class="text-2xl font-bold mb-4">فلترة المنتجات</h3>
     <div class="grid md:grid-cols-4 gap-4">
-        <select class="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white p-2 rounded">
+        <select class="w-full border p-2 rounded dark:bg-gray-700 dark:text-white transition-all duration-300">
             <option>النوع</option>
             <option>مطبخ</option>
             <option>غرفة نوم</option>
         </select>
-        <select class="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white p-2 rounded">
+        <select class="w-full border p-2 rounded dark:bg-gray-700 dark:text-white transition-all duration-300">
             <option>النمط</option>
             <option>مودرن</option>
             <option>كلاسيك</option>
         </select>
-        <select class="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white p-2 rounded">
+        <select class="w-full border p-2 rounded dark:bg-gray-700 dark:text-white transition-all duration-300">
             <option>اللون</option>
             <option>أبيض</option>
             <option>بني</option>
         </select>
-        <select class="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white p-2 rounded">
+        <select class="w-full border p-2 rounded dark:bg-gray-700 dark:text-white transition-all duration-300">
             <option>السعر</option>
             <option>أقل من 10000</option>
             <option>من 10000 إلى 20000</option>
@@ -73,37 +110,41 @@
     </div>
 </section>
 
+
 <!-- Kitchens Section -->
 <section id="kitchens" class="container mx-auto px-4 py-16">
     <h3 class="text-3xl font-bold mb-8 text-center text-teal-700">المطابخ المميزة</h3>
     <div class="grid md:grid-cols-3 gap-6">
-        <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition dark:border-gray-700 dark:bg-gray-800">
-            <img src="kt.jpg" alt="مطبخ" class="w-full h-56 object-cover">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"  data-aos="zoom-in">
+            <img src="kt.jpg" alt="مطبخ" class="rounded-lg shadow-lg  hover:scale-105 transition duration-300">
             <div class="p-4">
                 <h4 class="font-bold text-lg mb-2">مطبخ خشب طبيعي</h4>
                 <p class="text-teal-600 font-semibold mb-2">15,000 جنيه</p>
                 <p class="text-yellow-500 text-sm mb-2">⭐⭐⭐⭐☆</p>
-               <button onclick="window.location.href='product.html'" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
-               </button>
-            </div>
-        </div>
-        <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition dark:border-gray-700 dark:bg-gray-800">
-            <img src="kt.jpg" alt="مطبخ" class="w-full h-56 object-cover">
-            <div class="p-4">
-                <h4 class="font-bold text-lg mb-2">مطبخ خشب طبيعي</h4>
-                <p class="text-teal-600 font-semibold mb-2">15,000 جنيه</p>
-                <p class="text-yellow-500 text-sm mb-2">⭐⭐⭐⭐☆</p>
-                <button onclick="window.location.href='product.html'" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
+                <button onclick="window.location.href='product.html'"
+                        class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
                 </button>
             </div>
         </div>
-        <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition dark:border-gray-700 dark:bg-gray-800">
-            <img src="kt.jpg" alt="مطبخ" class="w-full h-56 object-cover">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"  data-aos="zoom-in">
+            <img src="kt.jpg" alt="مطبخ" class="rounded-lg shadow-lg  hover:scale-105 transition duration-300">
             <div class="p-4">
                 <h4 class="font-bold text-lg mb-2">مطبخ خشب طبيعي</h4>
                 <p class="text-teal-600 font-semibold mb-2">15,000 جنيه</p>
                 <p class="text-yellow-500 text-sm mb-2">⭐⭐⭐⭐☆</p>
-                <button onclick="window.location.href='product.html'" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
+                <button onclick="window.location.href='product.html'"
+                        class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
+                </button>
+            </div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"  data-aos="zoom-in">
+            <img src="kt.jpg" alt="مطبخ" class="rounded-lg shadow-lg  hover:scale-105 transition duration-300">
+            <div class="p-4">
+                <h4 class="font-bold text-lg mb-2">مطبخ خشب طبيعي</h4>
+                <p class="text-teal-600 font-semibold mb-2">15,000 جنيه</p>
+                <p class="text-yellow-500 text-sm mb-2">⭐⭐⭐⭐☆</p>
+                <button onclick="window.location.href='product.html'"
+                        class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
                 </button>
             </div>
         </div>
@@ -115,33 +156,36 @@
 <section id="bedrooms" class="container mx-auto px-4 py-16">
     <h3 class="text-3xl font-bold mb-8 text-center text-teal-700">غرف النوم</h3>
     <div class="grid md:grid-cols-3 gap-6">
-        <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition dark:border-gray-700 dark:bg-gray-800">
-            <img src="bd.jpg" alt="غرفة نوم" class="w-full h-56 object-cover">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"   data-aos="flip-left">
+            <img src="bd.jpg" alt="غرفة نوم" class="rounded-lg shadow-lg  hover:scale-105 transition duration-300">
             <div class="p-4">
                 <h4 class="font-bold text-lg mb-2">غرفة نوم مودرن</h4>
                 <p class="text-teal-600 font-semibold mb-2">12,000 جنيه</p>
                 <p class="text-yellow-500 text-sm mb-2">⭐⭐⭐⭐⭐</p>
-                <button onclick="window.location.href='product.html'" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
+                <button onclick="window.location.href='product.html'"
+                        class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
                 </button>
             </div>
         </div>
-        <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition dark:border-gray-700 dark:bg-gray-800">
-            <img src="bd.jpg" alt="غرفة نوم" class="w-full h-56 object-cover">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"   data-aos="flip-left">
+            <img src="bd.jpg" alt="غرفة نوم" class="rounded-lg shadow-lg  hover:scale-105 transition duration-300">
             <div class="p-4">
                 <h4 class="font-bold text-lg mb-2">غرفة نوم مودرن</h4>
                 <p class="text-teal-600 font-semibold mb-2">12,000 جنيه</p>
                 <p class="text-yellow-500 text-sm mb-2">⭐⭐⭐⭐⭐</p>
-                <button onclick="window.location.href='product.html'" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
+                <button onclick="window.location.href='product.html'"
+                        class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
                 </button>
             </div>
         </div>
-        <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition dark:border-gray-700 dark:bg-gray-800">
-            <img src="bd.jpg" alt="غرفة نوم" class="w-full h-56 object-cover">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"   data-aos="flip-left">
+            <img src="bd.jpg" alt="غرفة نوم" class="rounded-lg shadow-lg  hover:scale-105 transition duration-300">
             <div class="p-4">
                 <h4 class="font-bold text-lg mb-2">غرفة نوم مودرن</h4>
                 <p class="text-teal-600 font-semibold mb-2">12,000 جنيه</p>
                 <p class="text-yellow-500 text-sm mb-2">⭐⭐⭐⭐⭐</p>
-                <button onclick="window.location.href='product.html'" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
+                <button onclick="window.location.href='product.html'"
+                        class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"> تفاصيل
                 </button>
             </div>
         </div>
@@ -173,19 +217,21 @@
         <div>
             <h2 class="text-3xl font-bold mb-4">مطبخ خشب طبيعي</h2>
             <p class="text-teal-600 text-xl font-semibold mb-2">15,000 جنيه</p>
-            <p class="mb-4 text-gray-700 dark:text-gray-300">مطبخ مودرن بخامات عالية الجودة – خشب طبيعي مقاوم للرطوبة – تصميم عملي يناسب كل المساحات</p>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">مطبخ مودرن بخامات عالية الجودة – خشب طبيعي مقاوم للرطوبة –
+                تصميم عملي يناسب كل المساحات</p>
             <ul class="list-disc pl-6 text-gray-600 dark:text-gray-300">
                 <li>عرض: 3 متر</li>
                 <li>اللون: بني + أبيض</li>
                 <li>الضمان: سنتين</li>
             </ul>
-<!--            <button class="mt-6 bg-teal-600 text-white px-6 py-3 rounded hover:bg-teal-700">أضف إلى السلة</button>-->
+            <!--            <button class="mt-6 bg-teal-600 text-white px-6 py-3 rounded hover:bg-teal-700">أضف إلى السلة</button>-->
         </div>
     </div>
 </section>
 
 <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/20123456789" target="_blank" class="fixed bottom-6 left-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 z-50">
+<a href="https://wa.me/20123456789" target="_blank"
+   class="fixed bottom-6 left-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 z-50">
     💬
 </a>
 
@@ -216,6 +262,14 @@
         </div>
     </div>
 </footer>
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true, // يظهر مرة واحدة فقط
+    });
+</script>
 
 </body>
 </html>
